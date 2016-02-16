@@ -1,5 +1,14 @@
 # RELEASE HISTORY
 
+## v1.1.0.1 / 2016-02-16
+
+Changes:
+
+* 1 Change
+
+    * fix upload_file method to fix missing cache-control headers
+      * see https://github.com/sellect/asset_sync/pull/1
+
 ## v1.1.0 / 2014-08-13
 
 Version 1.1.0 (Toby Osbourn <tosbourn@rumblelabs.com>)
@@ -35,7 +44,7 @@ Changes:
 
 Version 0.5.1 (David Rice <me@davidjrice.co.uk>)
 
-Changes: 
+Changes:
 
 * 5 Nominal Changes
 
@@ -75,14 +84,14 @@ Changes:
 
     * Refactor cache control and expiry hearder definition to use same value of one year
     * Merge pull request #94 from karlfreeman/time
-      
+
       Remove Rails time dependency
     * Allow failures in ruby-head
     * Merge pull request #88 from potomak/patch-1
-      
+
       Fix defined? syntax
     * Merge pull request #95 from bbhoss/patch-1
-      
+
       Fix syntax error in documentation
     * Describe using S3 HTTPS better
     * Fix syntax error
@@ -99,7 +108,7 @@ Changes:
     * Merge branch 'master' of github.com:rumblelabs/asset_sync
     * Update README for installing on heroku, labs is no-longer a plugin
     * Merge pull request #75 from mscottford/master
-      
+
       Update asset_host configuration in README to not rely on request object
     * Version 0.4.2, allow configuration of an array of strings or regex for files to ignore uploading. #euruko
 
@@ -117,7 +126,7 @@ Changes:
     * Add option to configure ignored_files through YAML config file
     * Removes errant end in the asset_host config example.
     * Updates README to suggest a different asset_host configuration
-      
+
       The previous version will fail in some cases because a request is not always available during asset compilation.
     * Fix Fog warnings when running specs.
     * Version 0.4.1, allow programatic disabling of AssetSync.config.enabled
@@ -139,7 +148,7 @@ Changes:
     * Add support for enabled in the yaml config.
     * Add specs for AssetSync.enabled? configured through the initializer.
     * Make it possible to turn off AssetSync...
-      
+
       Useful when precompiling to export to a hybrid mobile app such as PhoneGap.
       Would fix issue #66.
     * How many times will I forget to update the release date? many
@@ -165,7 +174,7 @@ Changes:
     * Merge branch 'master' into levent/feature/overwrite_specific_remote_files
     * Use my travis-ci build in README
     * Merge pull request #69 from levent/integrate_travis
-      
+
       Integrate Travis CI
     * Merge branch 'integrate_travis' into feature/overwrite_specific_remote_files
     * Specs for uploading assets
@@ -190,20 +199,20 @@ Changes:
 
     * Remove trailing comma
     * Merge pull request #57 from nathanhumbert/master
-      
+
       Set Content-Encoding for gzip files when config.gzip? is not true
     * Merge pull request #59 from kamui/master
-      
+
       Use Rails.public_path and Pathname#join for path concat and string interpolation
     * Merge pull request #55 from manuelmeurer/patch-1
-      
+
       Remove comments taken from another gem
     * Dir.chdir to path first to avoid a map call and path string slicing
     * add Rails.public_path stub and make Rails.root return Pathname class to match Rails behavior
     * Rails.root returns a Pathname, use Pathname#join instead of File.join and string interpolation
     * use Rails.public_path instead of concat Rails.root and 'public'
     * Set Content-Encoding for gzip files when config.gzip? is not true
-      
+
       This allows a S3 bucket served via CloudFront to properly handle the
       Accept-Encoding request header.
     * Remove comments taken from another gem
@@ -235,7 +244,7 @@ Changes:
 * 10 Nominal Changes
 
     * Merge pull request #50 from hampei/master
-      
+
       made gzip_compression settable via ENV
     * namespaced the ENV gzip option: ASSET_SYNC_GZIP_COMPRESSION. added option to readme
     * made gzip_compression settable via ENV
@@ -257,7 +266,7 @@ Changes:
 * 3 Nominal Changes
 
     * Merge pull request #42 from genuitytech/master
-      
+
       Now correctly setting config.fog_region.
     * Now correctly setting config.fog_region.
     * Version 0.2.8, improve http headers. Add far future expires and cache control, public.
@@ -320,7 +329,7 @@ Changes:
 * 5 Nominal Changes
 
     * Merge pull request #35 from siliconsalad/config_assets_prefix
-      
+
       Rails.config.assets.prefix used for sync
     * added test with Rails.config.assets.prefix set
     * Rails.config.assets.prefix used for sync (instead of hardcoded 'assets' value)
@@ -337,7 +346,7 @@ Changes:
 * 3 Nominal Changes
 
     * Merge pull request #28 from robink/master
-      
+
       Rackspace London support
     * Only merge racksace_auth_url to fog config if defined
     * Bump date for release
@@ -354,7 +363,7 @@ Changes:
     * Version 0.2.2: add fail_silently config option to avoid heroku installing the rails31_enable_runtime_asset_compilation, fixes issues #24, #29
     * Further explanation of fail_silently option
     * Merge pull request #29 from neilmiddleton/master
-      
+
       Allow precompile to fail quietly on heroku
     * Update README, and generator templates
     * Changes as discussed in PR#29
@@ -385,11 +394,11 @@ Changes:
 * 7 Nominal Changes
 
     * Merge pull request #48 from samsoffes/patch-1
-      
+
       Fix Heroku Labs plugin URL and add code coloring to readme.
     * Fix Heroku Labs plugin URL and add code coloring to readme.
     * Merge pull request #47 from dbalatero/dont_read_yml_file_every_time
-      
+
       Cache the YML config to avoid multiple file reads.
     * Cache the YML config to avoid multiple file reads.
     * Fix documentation typos
@@ -407,13 +416,13 @@ Changes:
 
     * Add an AssetSync.log method for outputing sync config failure so we can stub it out easily in tests
     * Merge pull request #44 from dbalatero/fix_nonstandard_manifest_location
-      
+
       Fixes asset_sync to correctly read manifest.yml files.
     * Fixes asset_sync to correctly read manifest.yml files.
-      
+
       Rails.config.assets.manifest only points to the directory that contains
       the manifest.yml file:
-      
+
       https://github.com/rails/rails/blob/226783d1e8891a38d4a61017952528970dba903d/actionpack/lib/sprockets/railtie.rb#L36
     * Add hack, seems required for some applications on push to Heroku, not for others
     * Version 0.2.9 fix bug in internal initializer
@@ -501,7 +510,7 @@ Changes:
     * Upload GZIP compressed assets nicely to S3 with correct content type and encoding.
     * Refactor upload method to make enhancing nicer
     * Merge pull request #12 from bobbrez/master
-      
+
       Minor correction to README for generated YAML file path.
     * Correcting location of generated yml in README
     * Comment out unnecessary logic for now
@@ -530,7 +539,7 @@ Changes:
 * 6 Nominal Changes
 
     * Merge pull request #7 from hone/6_rails3.1.1
-      
+
       Rails 3.1.1 Compatability
     * rails 3.1.1 support
     * fix typo
@@ -610,7 +619,7 @@ Changes:
 
     * Improve manifest configuration by making it a boolean option only, it will automatically use the configured manifest path if different from the default. Add documentation to readme about the new option and upgrade generated configs.
     * Merge pull request #20 from agworld/e26f5ca36dee1c2196653268ed6bb38c0226e4d2
-      
+
       Fixes issues #16, #17, #18 and #19
     * fixes https://github.com/rumblelabs/asset_sync/issues/19
     * Implements https://github.com/rumblelabs/asset_sync/issues/17
@@ -628,7 +637,7 @@ Changes:
 * 5 Nominal Changes
 
     * Merge pull request #4 from jsmestad/patch-1
-      
+
       [BUGFIX] Add support for 'existing_remote_files' configuration in YAML fi
     * Verbose output about the delete process.
     * Condense logic on keep
@@ -718,7 +727,7 @@ Changes:
     * Updated readme
     * Getting ready to release the gem
     * Revert "remove version file"
-      
+
       This reverts commit 7ebd853947b8d5f3b6e81f96535dfce843f2c855.
     * remove version file
     * Initial commit
